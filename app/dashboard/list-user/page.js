@@ -4,12 +4,12 @@ export const metadata = {
 
 export default function Page() {
     return (
-        <div className="w-full">
+        <main className="w-full">
             <header>
                 <h1 className="text-2xl">
                     List User
                 </h1>
             </header>
-        </div>
+        </main>
     )
 }

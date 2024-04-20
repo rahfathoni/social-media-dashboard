@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const loadingStart = setTimeout(() => {
-      router.push('/list-user');
+      router.push('/dashboard/list-user');
     }, 1500);
     return () => clearTimeout(loadingStart);
   }, []);
