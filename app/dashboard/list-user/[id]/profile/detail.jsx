@@ -1,4 +1,6 @@
-export default async function UserDetail({data}) {
+import DetailTabContainer from "./tab-container";
+
+export default function UserDetail({data}) {
   const formatAddress  = () => {
     let res = '-';
     if(data.address) {
@@ -14,9 +16,9 @@ export default async function UserDetail({data}) {
   return (
     <section className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
+        <div className="rounded-lg bg-gray-50 p-2 md:pt-1">
           <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-              <h2 className="tracking-wide">About</h2>
+              <h2 className="tracking-wide text-lg">About</h2>
           </div>
           <div className="text-gray-700">
               <div className="grid text-sm">
@@ -40,6 +42,7 @@ export default async function UserDetail({data}) {
                   </div>
               </div>
           </div>
+          <DetailTabContainer />
         </div>
       </div>
     </section>
