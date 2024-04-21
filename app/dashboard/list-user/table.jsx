@@ -1,3 +1,4 @@
+import { UserProfile } from "../../component/button";
 import { getUserList } from "../../lib/actions";
 
 export default async function UsersTable() {
@@ -32,7 +33,7 @@ export default async function UsersTable() {
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
                   <div className="flex justify-end gap-2">
-                    btn detail
+                    <UserProfile id={user.id}/>
                   </div>
                 </div>
               </div>
@@ -74,7 +75,7 @@ export default async function UsersTable() {
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      btn detail
+                      <UserProfile id={user.id}/>
                     </div>
                   </td>
                 </tr>

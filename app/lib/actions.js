@@ -8,7 +8,7 @@ export async function getUserList() {
   noStore();
   try {
     const url = `${domain}/users`;
-    console.log('getUserList URL ', url)
+    console.log('getUserList URL ', url);
     const req = await fetch(url, { 
       method: "GET", 
     });
@@ -16,5 +16,20 @@ export async function getUserList() {
     return res;
   } catch (error) {
     console.log('[ERR] Get User List', error);
-  };
+  }
+}
+
+export async function getUserProfile(id) {
+  noStore();
+  try {
+    const url = `${domain}/users/${id}`;
+    console.log('getUserProfile URL ', url);
+    const req = await fetch(url, { 
+      method: "GET", 
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Get User Profile', error);
+  }
 }
