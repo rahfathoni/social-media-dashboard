@@ -1,3 +1,5 @@
+import UsersTable from "./table";
+
 export const metadata = {
     title: 'List User'
 };
@@ -10,6 +12,9 @@ export default function Page() {
                     List User
                 </h1>
             </header>
+            <section>
+                <UsersTable />
+            </section>
         </main>
     )
 }
