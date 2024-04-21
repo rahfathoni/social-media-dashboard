@@ -12,11 +12,11 @@ export default async function UserDetail({data}) {
   }
 
   return (
-    <div className="mt-6 flow-root">
+    <section className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-              <span className="tracking-wide">About</span>
+              <h2 className="tracking-wide">About</h2>
           </div>
           <div className="text-gray-700">
               <div className="grid text-sm">
@@ -31,10 +31,7 @@ export default async function UserDetail({data}) {
                   <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Email</div>
                       <div className="px-4 py-2">
-                          {
-                            <a className="text-blue-800" href={`mailto:${data.email}`}>{data.email}</a>
-                            || '-'
-                          }
+                        {data.email ? <a className="text-blue-800" href={`mailto:${data.email}`}>{data.email}</a> : '-'}
                       </div>
                   </div>
                   <div className="grid grid-cols-2">
@@ -45,6 +42,6 @@ export default async function UserDetail({data}) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
