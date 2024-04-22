@@ -78,3 +78,18 @@ export async function getPostComment(postId) {
     console.log('[ERR] Get Post Comment', error);
   }
 }
+
+export async function getPhotoAlbum(albumId) {
+  noStore()
+  try {
+    const url = `${domain}/albums/${albumId}/photos`;
+    console.log('getPhotoAlbum URL ', url);
+    const req = await fetch(url, { 
+      method: "GET", 
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Get Photo Album', error);
+  }
+}
