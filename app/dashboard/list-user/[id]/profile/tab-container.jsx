@@ -34,7 +34,7 @@ export default function DetailTabContainer({albums, posts}) {
                   }`}
                   role="tab"
                   >
-                  Post
+                  Posts
                 </button>
                 <button
                   onClick={() => handleTabOpen("album")}
@@ -45,7 +45,7 @@ export default function DetailTabContainer({albums, posts}) {
                   }`}
                   role="tab"
                   >
-                  Album
+                  Albums
                 </button>
               </div>
               {Object.keys(details).map((key) => (
