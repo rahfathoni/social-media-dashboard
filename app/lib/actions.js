@@ -63,3 +63,18 @@ export async function getUserPosts(id) {
     console.log('[ERR] Get User Posts', error);
   }
 }
+
+export async function getPostComment(postId) {
+  noStore()
+  try {
+    const url = `${domain}/posts/${postId}/comments`;
+    console.log('getPostComment URL ', url);
+    const req = await fetch(url, { 
+      method: "GET", 
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Get Post Comment', error);
+  }
+}
