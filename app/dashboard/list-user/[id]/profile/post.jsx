@@ -1,4 +1,4 @@
-import Comment from "@/app/dashboard/list-user/[id]/profile/comment";
+import PostComment from "@/app/dashboard/list-user/[id]/profile/comment";
 import { getPostComment } from "@/app/lib/actions";
 import { useState } from "react";
 
@@ -75,7 +75,7 @@ export default function UserPost({data, user}) {
                 {selectPost === post.id ? 'Hide Comment' : 'See Comment'}
               </button>
             </div>
-            {selectPost === post.id && <Comment data={postComment}/>}
+            {selectPost === post.id && <PostComment data={postComment}/>}
           </article>
         ))}
       </div>

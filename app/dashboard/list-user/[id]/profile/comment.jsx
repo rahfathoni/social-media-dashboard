@@ -1,4 +1,4 @@
-export default function Comment({data}) {
+export default function PostComment({data}) {
   return (
     <section>
       {data.map((comment, i) => (
