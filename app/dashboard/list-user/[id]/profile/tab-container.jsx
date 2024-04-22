@@ -4,14 +4,14 @@ import { useState } from "react";
 import UserAlbum from "./album";
 import UserPost from "./post";
 
-export default function DetailTabContainer({albums, posts}) {
+export default function DetailTabContainer({albums, posts, user}) {
   const [open, setOpen] = useState("post");
   const handleTabOpen = (tabCategory) => {
     setOpen(tabCategory);
   };
 
   const details = {
-    post: <UserPost data={posts} />,
+    post: <UserPost data={posts} user={user} />,
     album: <UserAlbum data={albums} />,
   };
   return (
