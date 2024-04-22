@@ -58,6 +58,7 @@ export async function getUserPosts(id) {
       method: "GET", 
     });
     const res = await req.json();
+    console.log('getUserPosts', res)
     return res;
   } catch (error) {
     console.log('[ERR] Get User Posts', error);
@@ -65,7 +66,7 @@ export async function getUserPosts(id) {
 }
 
 export async function getPostComment(postId) {
-  noStore()
+  noStore();
   try {
     const url = `${domain}/posts/${postId}/comments`;
     console.log('getPostComment URL ', url);
@@ -80,7 +81,7 @@ export async function getPostComment(postId) {
 }
 
 export async function getPhotoAlbum(albumId) {
-  noStore()
+  noStore();
   try {
     const url = `${domain}/albums/${albumId}/photos`;
     console.log('getPhotoAlbum URL ', url);
@@ -91,5 +92,27 @@ export async function getPhotoAlbum(albumId) {
     return res;
   } catch (error) {
     console.log('[ERR] Get Photo Album', error);
+  }
+}
+
+export async function postNewPost(data) {
+  noStore();
+  try {
+    const url = `${domain}/posts`;
+    const req = await fetch(url, { 
+      method: 'POST',
+      body: JSON.stringify({
+        title: data.title,
+        body: data.body,
+        userId: data.id,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Post New Post', error);
   }
 }
