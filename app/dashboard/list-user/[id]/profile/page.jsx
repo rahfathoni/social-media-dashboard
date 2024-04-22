@@ -24,7 +24,7 @@ export default async function Page({params}) {
         <div className="inline-block min-w-full align-middle">
           <div className="rounded-lg bg-gray-50 p-2 md:pt-1">
             <UserDetail data={user} />
-            <DetailTabContainer albums={albums} posts={posts} />
+            <DetailTabContainer albums={albums} posts={posts} user={user} />
           </div>
         </div>
       </section>

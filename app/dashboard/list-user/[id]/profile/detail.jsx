@@ -12,9 +12,9 @@ export default function UserDetail({data}) {
   }
 
   return (
-    <>
-      <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-        <h2 className="tracking-wide text-lg">About</h2>
+    <section>
+      <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 px-2">
+        <h2 className="tracking-wide text-lg lg:text-2xl font-bold text-gray-900">About</h2>
       </div>
       <div className="text-gray-700">
           <div className="grid text-sm">
@@ -38,6 +38,6 @@ export default function UserDetail({data}) {
               </div>
           </div>
       </div>
-    </>
+    </section>
   );
 }
