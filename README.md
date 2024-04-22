@@ -1,8 +1,12 @@
+## WEBSITE URL
+
+        https://social-media-dashboard-ruby-six.vercel.app/
+
 ## HOW TO OPEN FROM GIT REPOSITORY
 
-  1. git clone https://github.com/rahfathoni/social-media-dashboard.git
-  2. npm install
-  3. npm run dev
+    1. git clone https://github.com/rahfathoni/social-media-dashboard.git
+    2. npm install
+    3. npm run dev
 
 ## Learn More
 
