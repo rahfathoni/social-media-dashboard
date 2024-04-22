@@ -1,12 +1,8 @@
-import { useParams } from 'next/navigation';
-
-export default function UserPost() {
-  const params = useParams();
-  const id = params.id;
-
+export default function UserPost({data}) {
   return (
     <div>
-      post user {id}
+      post user
+      {JSON.stringify(data)}
     </div>
   )
 }

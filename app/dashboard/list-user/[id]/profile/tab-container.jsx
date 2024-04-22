@@ -4,15 +4,15 @@ import { useState } from "react";
 import UserAlbum from "./album";
 import UserPost from "./post";
 
-export default function DetailTabContainer() {
+export default function DetailTabContainer({albums, posts}) {
   const [open, setOpen] = useState("post");
   const handleTabOpen = (tabCategory) => {
     setOpen(tabCategory);
   };
 
   const details = {
-    post: <UserPost />,
-    album: <UserAlbum />,
+    post: <UserPost data={posts} />,
+    album: <UserAlbum data={albums} />,
   };
   return (
     <section className="py-1">

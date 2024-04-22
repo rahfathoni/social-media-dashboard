@@ -1,12 +1,17 @@
-import { getUserProfile } from "@/app/lib/actions"
+import { getUserAlbums, getUserPosts, getUserProfile } from "@/app/lib/actions"
 import UserDetail from "./detail";
+import DetailTabContainer from "./tab-container";
 
 export const metadata = {
   title: 'Profile'
 }
 
 export default async function Page({params}) {
-  const user = await getUserProfile(params.id);
+  const [user, albums, posts] = await Promise.all([
+    getUserProfile(params.id),
+    getUserAlbums(params.id),
+    getUserPosts(params.id)
+  ]);
   
   return (
     <main className="w-full">
@@ -15,8 +20,13 @@ export default async function Page({params}) {
             <span className="font-bold">{user.name}</span>'s Profile
         </h1>
       </header>
-      <section>
-        <UserDetail data={user} />
+      <section className="mt-6 flow-root">
+        <div className="inline-block min-w-full align-middle">
+          <div className="rounded-lg bg-gray-50 p-2 md:pt-1">
+            <UserDetail data={user} />
+            <DetailTabContainer albums={albums} posts={posts} />
+          </div>
+        </div>
       </section>
     </main>
   )

@@ -1,5 +1,3 @@
-import DetailTabContainer from "./tab-container";
-
 export default function UserDetail({data}) {
   const formatAddress  = () => {
     let res = '-';
@@ -14,37 +12,32 @@ export default function UserDetail({data}) {
   }
 
   return (
-    <section className="mt-6 flow-root">
-      <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-1">
-          <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-              <h2 className="tracking-wide text-lg">About</h2>
-          </div>
-          <div className="text-gray-700">
-              <div className="grid text-sm">
-                  <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Name</div>
-                      <div className="px-4 py-2">{data.name || '-'}</div>
-                  </div>
-                  <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Username</div>
-                      <div className="px-4 py-2">{data.username || '-'}</div>
-                  </div>
-                  <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Email</div>
-                      <div className="px-4 py-2">
-                        {data.email ? <a className="text-blue-800" href={`mailto:${data.email}`}>{data.email}</a> : '-'}
-                      </div>
-                  </div>
-                  <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Address</div>
-                      <div className="px-4 py-2">{formatAddress()}</div>
+    <>
+      <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+        <h2 className="tracking-wide text-lg">About</h2>
+      </div>
+      <div className="text-gray-700">
+          <div className="grid text-sm">
+              <div className="grid grid-cols-2">
+                  <div className="px-4 py-2 font-semibold">Name</div>
+                  <div className="px-4 py-2">{data.name || '-'}</div>
+              </div>
+              <div className="grid grid-cols-2">
+                  <div className="px-4 py-2 font-semibold">Username</div>
+                  <div className="px-4 py-2">{data.username || '-'}</div>
+              </div>
+              <div className="grid grid-cols-2">
+                  <div className="px-4 py-2 font-semibold">Email</div>
+                  <div className="px-4 py-2">
+                    {data.email ? <a className="text-blue-800" href={`mailto:${data.email}`}>{data.email}</a> : '-'}
                   </div>
               </div>
+              <div className="grid grid-cols-2">
+                  <div className="px-4 py-2 font-semibold">Address</div>
+                  <div className="px-4 py-2">{formatAddress()}</div>
+              </div>
           </div>
-          <DetailTabContainer />
-        </div>
       </div>
-    </section>
+    </>
   );
 }

@@ -1,12 +1,8 @@
-import { useParams } from 'next/navigation';
-
-export default function UserAlbum() {
-  const params = useParams();
-  const id = params.id;
-
+export default function UserAlbum({data}) {
   return (
     <div>
-      album user {id}
+      album user
+      {JSON.stringify(data)}
     </div>
   )
 }

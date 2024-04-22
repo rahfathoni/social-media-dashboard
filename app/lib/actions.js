@@ -33,3 +33,33 @@ export async function getUserProfile(id) {
     console.log('[ERR] Get User Profile', error);
   }
 }
+
+export async function getUserAlbums(id) {
+  noStore();
+  try {
+    const url = `${domain}/users/${id}/albums`;
+    console.log('getUserAlbums URL ', url);
+    const req = await fetch(url, { 
+      method: "GET", 
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Get User Albums', error);
+  }
+}
+
+export async function getUserPosts(id) {
+  noStore();
+  try {
+    const url = `${domain}/users/${id}/posts`;
+    console.log('getUserPosts URL ', url);
+    const req = await fetch(url, { 
+      method: "GET", 
+    });
+    const res = await req.json();
+    return res;
+  } catch (error) {
+    console.log('[ERR] Get User Posts', error);
+  }
+}
