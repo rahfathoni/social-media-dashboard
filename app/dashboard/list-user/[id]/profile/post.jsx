@@ -1,6 +1,7 @@
 import PostComment from "@/app/dashboard/list-user/[id]/profile/comment";
 import { getPostComment } from "@/app/lib/actions";
 import { useState } from "react";
+import FormPost from "./form-post";
 
 export default function UserPost({data, user}) {
   const [selectPost, setSelectPost] = useState(0);
@@ -23,6 +24,7 @@ export default function UserPost({data, user}) {
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg lg:text-2xl font-bold text-gray-900">Post ({data ? data.length : 0})</h2>
         </div>
+        <FormPost user={user}/>
         {data.map((post, i) => (
           <article key={i} className="p-6 mb-3 text-base bg-white border-t border-gray-200">
             <footer className="flex justify-between items-center mb-2">
