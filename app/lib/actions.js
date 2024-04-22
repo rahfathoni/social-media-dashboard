@@ -58,7 +58,6 @@ export async function getUserPosts(id) {
       method: "GET", 
     });
     const res = await req.json();
-    console.log('getUserPosts', res)
     return res;
   } catch (error) {
     console.log('[ERR] Get User Posts', error);
